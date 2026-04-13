@@ -7,7 +7,7 @@
 - **Name:** Maddox Duggan
 - **Student ID:** 101483006
 - **Course:** COMP3133 – Full Stack Development
-- **Instructor:** Pritam
+- **Instructor:** Pritesh Patel
 
 ---
 
