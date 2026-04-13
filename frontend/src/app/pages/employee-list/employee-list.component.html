@@ -1,0 +1,82 @@
+<div class="page-container">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold mb-0">Employee List</h2>
+    <a routerLink="/employees/add" class="btn btn-success">Add Employee</a>
+  </div>
+
+  <div class="card p-3 mb-4 card-shadow">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-5">
+        <label class="form-label">Designation</label>
+        <input
+          class="form-control"
+          [(ngModel)]="designation"
+          placeholder="Search by designation"
+        />
+      </div>
+
+      <div class="col-md-5">
+        <label class="form-label">Department</label>
+        <input
+          class="form-control"
+          [(ngModel)]="department"
+          placeholder="Search by department"
+        />
+      </div>
+
+      <div class="col-md-2 d-grid gap-2">
+        <button class="btn btn-primary" (click)="searchEmployees()">Search</button>
+        <button class="btn btn-secondary" (click)="resetSearch()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="alert alert-info">Loading employees...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div class="table-responsive" *ngIf="!loading && employees.length > 0">
+    <table class="table table-hover bg-white shadow-sm">
+      <thead class="table-dark">
+      <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Date Joined</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let emp of employees" class="align-middle">
+        <td>
+          <img
+            [src]="emp.employee_photo || 'https://via.placeholder.com/70'"
+            class="employee-image"
+          />
+        </td>
+        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>{{ emp.date_of_joining | date:'mediumDate' }}</td>
+        <td>
+          <a [routerLink]="['/employees', emp._id]" class="btn btn-outline-primary btn-sm me-2">View</a>
+          <a [routerLink]="['/employees/edit', emp._id]" class="btn btn-outline-warning btn-sm me-2">Edit</a>
+          <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp._id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!loading && employees.length === 0" class="text-center mt-4">
+    <h5>No employees found</h5>
+    <p class="text-muted">Try adjusting your search or add a new employee.</p>
+  </div>
+</div>

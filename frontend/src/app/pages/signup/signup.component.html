@@ -1,0 +1,44 @@
+<div class="page-container">
+  <div class="card auth-card p-4 card-shadow">
+    <h2 class="text-center mb-4 fw-bold">Signup</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-3">
+      <div>
+        <label class="form-label">Username</label>
+        <input class="form-control" formControlName="username" />
+        <small class="text-danger"
+               *ngIf="form.controls['username'].touched && form.controls['username'].invalid">
+          Username is required.
+        </small>
+      </div>
+
+      <div>
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" />
+        <small class="text-danger"
+               *ngIf="form.controls['email'].touched && form.controls['email'].invalid">
+          Enter a valid email.
+        </small>
+      </div>
+
+      <div>
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" />
+        <small class="text-danger"
+               *ngIf="form.controls['password'].touched && form.controls['password'].invalid">
+          Password must be at least 6 characters.
+        </small>
+      </div>
+
+      <button class="btn btn-success w-100" [disabled]="loading">
+        {{ loading ? 'Creating account...' : 'Signup' }}
+      </button>
+
+      <div class="text-danger text-center" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <div class="text-center">
+        <a routerLink="/login">Already have an account?</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+/* Background + base */
+body {
+  background: linear-gradient(135deg, #eef2f7, #f8fbff);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Page wrapper */
+.page-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.card-shadow {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Auth cards (login/signup) */
+.auth-card {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 25px;
+}
+
+/* Inputs */
+input,
+select {
+  border-radius: 8px !important;
+  padding: 10px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* Table */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Employee image */
+.employee-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Details image */
+.details-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Section spacing */
+h2 {
+  font-weight: 600;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+}
+
+/* Navbar override */
+.navbar {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Search box */
+.card input {
+  background: #f9fbff;
+}

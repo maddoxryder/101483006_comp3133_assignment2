@@ -1,0 +1,64 @@
+<div class="page-container">
+  <div class="card p-4 card-shadow">
+    <h2 class="mb-4">Add Employee</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">First Name</label>
+          <input class="form-control" formControlName="first_name" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Last Name</label>
+          <input class="form-control" formControlName="last_name" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Email</label>
+          <input class="form-control" formControlName="email" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-select" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Designation</label>
+          <input class="form-control" formControlName="designation" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Department</label>
+          <input class="form-control" formControlName="department" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Salary</label>
+          <input type="number" class="form-control" formControlName="salary" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Date of Joining</label>
+          <input type="date" class="form-control" formControlName="date_of_joining" />
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <label class="form-label">Profile Picture</label>
+          <input type="file" class="form-control" (change)="onFileChange($event)" accept="image/*" />
+        </div>
+      </div>
+
+      <button class="btn btn-success" [disabled]="loading">
+        {{ loading ? 'Saving...' : 'Add Employee' }}
+      </button>
+
+      <div class="alert alert-danger mt-3" *ngIf="errorMessage">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

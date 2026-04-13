@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div *ngIf="loading" class="alert alert-info">Loading employee details...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div class="card p-4 card-shadow" *ngIf="employee">
+    <div class="row">
+      <div class="col-md-4 text-center mb-3">
+        <img
+          [src]="employee.employee_photo || 'https://via.placeholder.com/180'"
+          class="details-image"
+        />
+      </div>
+
+      <div class="col-md-8">
+        <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+        <hr />
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Gender:</strong> {{ employee.gender }}</p>
+        <p><strong>Designation:</strong> {{ employee.designation }}</p>
+        <p><strong>Department:</strong> {{ employee.department }}</p>
+        <p><strong>Salary:</strong> {{ employee.salary }}</p>
+        <p><strong>Date of Joining:</strong> {{ employee.date_of_joining | date:'mediumDate' }}</p>
+
+        <a class="btn btn-primary me-2" [routerLink]="['/employees/edit', employee._id]">Edit</a>
+        <a class="btn btn-secondary" routerLink="/employees">Back</a>
+      </div>
+    </div>
+  </div>
+</div>
