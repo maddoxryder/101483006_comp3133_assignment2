@@ -1,26 +1,50 @@
-# COMP3133 ASSIGNMENT 1
-## Maddox Duggan
-## 101483006
+# COMP3133 Assignment 2
+## Employee Management System (GraphQL + Angular)
 
-## Overview
-This assignment creates a backend API that supports basic CRUD operations, as well as input validation
-and JWT authentication. To create this assignment, I used the below tech stack:
-- MongoDB Atlas
-- NodeJS
-- Express
-- Apollo Server/GraphQL
-- JWT
-- Cloudinary (although it did not work for me)
+---
 
-# Collections:
-- **users**
-    - username (unique)
-    - email (unique)
-    - password (hashed)
-    - created_at, updated_at
-- **employees**
-    - first_name, last_name, email, gender, designation
-    - salary (min: 1000)
-    - date_of_joining, department
-    - employee_photo (Cloudinary URL)
-    - created_at, updated_at
+## Student Information
+- **Name:** Maddox Duggan
+- **Student ID:** 101483006
+- **Course:** COMP3133 – Full Stack Development
+- **Instructor:** Pritam
+
+---
+
+## Project Overview
+
+This project is a **full-stack Employee Management System** built using:
+
+- **Frontend:** Angular
+- **Backend:** Node.js + Express + GraphQL
+- **Database:** MongoDB Atlas
+
+The application allows users to:
+
+- Register and login (JWT authentication)
+- View all employees
+- Add new employees (with optional image upload)
+- Edit employee details
+- Delete employees
+- Search employees by **designation** or **department**
+
+---
+
+##  Technologies Used
+
+### Frontend
+- Angular (Standalone Components)
+- Apollo Angular (GraphQL client)
+- Bootstrap (UI styling)
+- RxJS
+
+### Backend
+- Node.js
+- Express.js
+- GraphQL
+- Apollo Server
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt (password hashing)
+
+---
